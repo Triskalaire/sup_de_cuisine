@@ -5,17 +5,69 @@
         <title> Sup de Cuisine</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://kit.fontawesome.com/0ed4d5c1f3.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
     </head>
     <body>
 
         <header>
-            <div>
-                <span id="Titre">Sup De Cuisine</span>
+            
+            <div class="image_intro">
+                <img id="image_presentation" src="images/Recette05.webp" alt="Image de présentation du Site"> 
+                <div>
+                    <span id="Accroche">Cherchez parmi plus de 1500 recettes du quotidien, simples et généreuses</span>
+                </div>
+                <div class="zone_de_recherche">
+                    <input id="recherche" type="text" value="Recherchez une recette ou un ingrédient">
+                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                </div>
             </div>
             
+           
         </header>
 
+        <main>
+            <div class="liste_ingredient">
+                <select name="ingredients" id="select_ingredient">
+                    <option value="">Ingredients</option>
+                </select>
+            </div>
+            <div class="liste_appareil">
+                <select name="appareils" id="select_appareil">
+                    <option value="">Appareils</option>
+                </select>
+            </div>
+            <div class="liste_ustensile">
+                <select name="unstensiles" id="select_ingredient">
+                    <option value="">Ustensiles</option>
+                </select>
+            </div>
+
+            <div class="full_container">
+                <div class="liste_recettes">
+                    <a class="recette" href="#">
+                        <div class="img_recette">
+                            <img class="food_image" src="images\Recette01.webp">
+                        </div>
+                        <div class="nom_recette">
+                            recette
+                        </div>
+                        <div class="text_recette">
+                            on fait comme ça la recette
+                        </div>
+                        <div class="ingredient_recette">
+                            il y a ça dans la recette
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+        <script type="module" src="code.js">
+        </script>
     </body>
 
 </html>

@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+header{
+    display:flex;
+    border: 1px solid aqua;
+    min-width: 320px;
+    width:fit-content;
+    img{
+        min-width: 320px;
+        width:100%;
+        position:absolute;
+        border: 1px solid red;
+        overflow: hidden;
+    }
+    #Accroche{
+        z-index: 30;
+        padding-top:10%;
+        padding-left: 5%;
+        padding-right:5%;
+        padding-bottom:5%;
+        position:relative;
+        display: flex;
+        
+        color: gold;
+        font-size:25px;
+        font-family: "Itim", cursive;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        text-shadow: 2px 2px darkgoldenrod;        
+    }
+    .zone_de_recherche{
+        position:relative;
+        display: block;
+        z-index: 30;
+        text-align: center;
+        #recherche{
+            width:60%;
+            height:50px;
+            border:2px solid gray;
+            border-radius: 4px;
+            box-shadow: 4px lightgray;
+        }
+    }
+    
+}
