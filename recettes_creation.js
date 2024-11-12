@@ -26,6 +26,35 @@ function createRecette(){
         <div class="ustensils">
             ${this.ustensils}
         </div>
-        `
-        
+        `;
+    return article;
 }
+
+function createIngredientList(){
+
+}
+
+function createDescription(){
+    
+}
+
+export const createRecetteSheet = (recette) => {
+    const { id, image, name, servings, ingredients, time, description, appliance, ustensils } = recette;
+    const isNew = restaurant.new;
+
+    return {
+        id: id,
+        image: image,
+        name: name,
+        servings: servings,
+        ingredients: ingredients,
+        time: time,
+        description: description,
+        appliance: appliance,
+        ustensils: ustensils,
+        isNew: isNew,
+        createRecette: createRecette,
+        createIngredientList: createIngredientList,
+        createDescription: createDescription,
+    }
+};
