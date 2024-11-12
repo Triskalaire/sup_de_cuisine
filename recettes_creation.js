@@ -2,7 +2,8 @@ function createRecette(){
     const article = document.createElement('article')
     article.setAttribute('class', 'recette')
     article.innerHTML=
-        `<div class="img_recette">
+        `
+        <div class="img_recette">
             <img class="food_image" src="${this.image}">
         </div>
         <div class="nom_recette">
@@ -31,11 +32,22 @@ function createRecette(){
 }
 
 function createIngredientList(){
-
+    const ingredientList = document.createElement('article')
+    ingredientList.setAttribute('class','ingredient_recette')
+    ingredientList.innerHTML=
+    `
+        <div class="ingredient">
+            ${this.ingredient}
+        </div>
+        <div class="quantity">
+            ${this.quantity}
+        </div>    
+    `;
+    return ingredientList ;
 }
 
 function createDescription(){
-    
+
 }
 
 export const createRecetteSheet = (recette) => {
