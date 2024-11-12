@@ -8,3 +8,15 @@ export function getData(){
         .then(recettes => recettes)
         .catch(error => error)
 }
+
+getData().then(
+    (recettes) => {
+        const recetteContainer = document.getElementById("liste_recettes");
+        const recetteLength = recettes.length;
+
+        for ( let i = 0; i < recetteLength; i++ ) {
+            const recette = createRecette(recettes[i]);
+            recetteContainer.append(recette.createRecetteSheet());
+        }
+    }
+)
