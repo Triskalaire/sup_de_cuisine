@@ -1,4 +1,4 @@
-function createRecette(){
+function createRecetteSheet(){
     const article = document.createElement('article')
     article.setAttribute('class', 'recette')
     article.innerHTML=
@@ -15,8 +15,8 @@ function createRecette(){
         <div class="time">
             ${this.time}
         </div>
-        <div class="ingredient_recette">
-            ${this.ingredients}
+        <div class="ingredients_recette">
+            ${createIngredientList(this.ingredients)}
         </div>
         <div class="text_recette">
             ${this.description}
@@ -31,25 +31,23 @@ function createRecette(){
     return article;
 }
 
-function createIngredientList(){
-    const ingredientList = document.createElement('article')
-    ingredientList.setAttribute('class','ingredient_recette')
-    ingredientList.innerHTML=
-    `
-        <div class="ingredient">
-            ${this.ingredient}
-        </div>
-        <div class="quantity">
-            ${this.quantity}
-        </div>    
-    `;
-    return ingredientList ;
+function createIngredientList(ingredientArray) {
+    let ingredientHTML = '';
+    for (const item of ingredientArray) {
+        ingredientHTML += `
+            <div class="ingredient_recette">
+                <div class="ingredient">${item.ingredient || "N/A"}</div>
+                <div class="quantity">${item.quantity ? item.quantity : ""}</div>
+            </div>
+        `;
+    }
+    return ingredientHTML;
 }
 
 function createDescription(){
 
 }
-export const createRecetteSheet = (recette) => {
+export const createRecette = (recette) => {
     const { id, image, name, servings, ingredients, time, description, appliance, ustensils } = recette;
 
     return {
@@ -62,7 +60,7 @@ export const createRecetteSheet = (recette) => {
         description: description,
         appliance: appliance,
         ustensils: ustensils,
-        createRecette: createRecette,
+        createRecetteSheet: createRecetteSheet,
         createIngredientList: createIngredientList,
         createDescription: createDescription,
     }
