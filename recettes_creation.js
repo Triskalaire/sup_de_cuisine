@@ -49,10 +49,8 @@ function createIngredientList(){
 function createDescription(){
 
 }
-
 export const createRecetteSheet = (recette) => {
     const { id, image, name, servings, ingredients, time, description, appliance, ustensils } = recette;
-    const isNew = restaurant.new;
 
     return {
         id: id,
@@ -64,7 +62,6 @@ export const createRecetteSheet = (recette) => {
         description: description,
         appliance: appliance,
         ustensils: ustensils,
-        isNew: isNew,
         createRecette: createRecette,
         createIngredientList: createIngredientList,
         createDescription: createDescription,
