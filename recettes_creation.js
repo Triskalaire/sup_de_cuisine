@@ -24,7 +24,7 @@ function createRecetteSheet(){
         <div class="appliance">
             ${this.appliance}
         </div>
-        <div class="ustensils">
+        <div class="ustensiles">
             ${createUstensilsList(this.ustensils)}
         </div>
         `;
@@ -34,7 +34,6 @@ function createRecetteSheet(){
 function createIngredientList(ingredientArray) {
     let ingredientHTML = '';
     for (const item of ingredientArray) {
-        console.log(item)
         ingredientHTML += `
             <div class="ingredient_recette">
                 <div class="ingredient">${item.ingredient || "N/A"}</div>
@@ -50,9 +49,7 @@ function createUstensilsList(ustensilsArray){
     let ustensilsHTML = '';
     for (const item of ustensilsArray) {
         ustensilsHTML += `
-            <div class="ustensils_recette">
-                <div class="ustensils">${item || "N/A"}</div>
-            </div>
+            <div class="ustensils">${item || "N/A"}</div>
         `;
     }
     return ustensilsHTML;

@@ -31,46 +31,29 @@
         </header>
 
         <main>
-            <div class="liste_container">
-                <div class="liste_ingredient">
-                    <select name="ingredients" id="select_ingredient">
-                        <option value="">Ingredients</option>
-                    </select>
-                </div>
-                <div class="liste_appareil">
-                    <select name="appareils" id="select_appareil">
-                        <option value="">Appareils</option>
-                    </select>
-                </div>
-                <div class="liste_ustensile">
-                    <select name="unstensiles" id="select_ingredient">
-                        <option value="">Ustensiles</option>
-                    </select>
+            <div id= "liste_container">
+                <select id="liste_ingredients">
+
+                </select>
+                <select id="liste_appareils">
+
+                </select>
+                <select id="liste_ustensiles">
+
+                </select>
+                <div id="filters">
+                    
                 </div>
             </div>
 
             <div class="full_container">
                 <div id="liste_recettes" class="liste_recettes">
                     <div class="recette_loader"> Chargement ...</div>
-                    <!-- <a class="recette" href="#">
-                        <div class="img_recette">
-                            <img class="food_image" src="images\Recette01.webp">
-                        </div>
-                        <div class="nom_recette">
-                            recette
-                        </div>
-                        <div class="text_recette">
-                            on fait comme ça la recette
-                        </div>
-                        <div class="ingredient_recette">
-                            il y a ça dans la recette
-                        </div>
-                    </a> -->
                 </div>
             </div>
         </main>
-        <script type="module" src="code.js">
-        </script>
+        <script type="module" src="code.js"></script>
+        <script src="filtering.js"></script>
     </body>
 
 </html>
