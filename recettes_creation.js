@@ -25,7 +25,7 @@ function createRecetteSheet(){
             ${this.appliance}
         </div>
         <div class="ustensils">
-            ${this.ustensils}
+            ${createUstensilsList(this.ustensils)}
         </div>
         `;
     return article;
@@ -34,19 +34,30 @@ function createRecetteSheet(){
 function createIngredientList(ingredientArray) {
     let ingredientHTML = '';
     for (const item of ingredientArray) {
+        console.log(item)
         ingredientHTML += `
             <div class="ingredient_recette">
                 <div class="ingredient">${item.ingredient || "N/A"}</div>
                 <div class="quantity">${item.quantity ? item.quantity : ""}</div>
+                <div class="unit">${item.unit ? item.unit :""}</div>
             </div>
         `;
     }
     return ingredientHTML;
 }
 
-function createDescription(){
-
+function createUstensilsList(ustensilsArray){
+    let ustensilsHTML = '';
+    for (const item of ustensilsArray) {
+        ustensilsHTML += `
+            <div class="ustensils_recette">
+                <div class="ustensils">${item || "N/A"}</div>
+            </div>
+        `;
+    }
+    return ustensilsHTML;
 }
+
 export const createRecette = (recette) => {
     const { id, image, name, servings, ingredients, time, description, appliance, ustensils } = recette;
 
@@ -62,6 +73,6 @@ export const createRecette = (recette) => {
         ustensils: ustensils,
         createRecetteSheet: createRecetteSheet,
         createIngredientList: createIngredientList,
-        createDescription: createDescription,
+        createUstensilsList: createUstensilsList,
     }
 };
