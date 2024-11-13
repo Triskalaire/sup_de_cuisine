@@ -1,31 +1,27 @@
-* {
+body,html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     text-decoration: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    border:1px solid red;
+    min-width: fit-content;
 }
 
 header{
-    display:flex;
-    border: 1px solid aqua;
-    min-width: 320px;
-    width:fit-content;
-    img{
-        min-width: 320px;
-        width:100%;
-        position:absolute;
-        border: 1px solid red;
-        overflow: hidden;
-    }
+    position:relative;
+    background-image: url("images/Recette05.webp");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
     #Accroche{
-        z-index: 30;
-        padding-top:10%;
-        padding-left: 5%;
-        padding-right:5%;
-        padding-bottom:5%;
         position:relative;
-        display: flex;
-        
+        display: flex;    
         color: gold;
         font-size:25px;
         font-family: "Itim", cursive;
@@ -33,7 +29,7 @@ header{
         font-style: normal;
         text-align: center;
         text-shadow: 2px 2px darkgoldenrod;        
-    }
+        }
     .zone_de_recherche{
         position:relative;
         display: block;
@@ -45,7 +41,20 @@ header{
             border:2px solid gray;
             border-radius: 4px;
             box-shadow: 4px lightgray;
+            }
         }
-    }
     
+    
+    
+}
+
+main{
+    position:relative;
+    border:1px solid blue;
+    min-width: 320px;
+    .liste_container{
+        display:flex;
+        gap:15px;
+        margin:5%;
+    }
 }
