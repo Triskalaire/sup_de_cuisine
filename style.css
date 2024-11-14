@@ -48,6 +48,11 @@ header{
     
 }
 
+.recette{
+    display :block;
+    border : orange;
+}
+
 main{
     position:relative;
     border:1px solid blue;

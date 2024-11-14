@@ -1,6 +1,7 @@
 // document.getElementById(liste_ingredient).addEventListener('change',filter(liste_ingredient));
 // document.getElementById(liste_ustensiles).addEventListener('change',filter(liste_ustensiles));
 // document.getElementById(liste_appareil).addEventListener('change',filter(liste_appareil));
+document.getElementById('recherche').addEventListener('input',filterRecettes());
 
 function listIngredientCreate(){
     const collection = document.getElementsByClassName('ingredient')
@@ -66,21 +67,42 @@ function listAppareilsCreate(){
     return liste_appareils;
 }
 
-// function sortList(html){
-//     var sorted = document.getElementById();
-//     for (const i of html){
-//         var temp = i.innerHTML;
-//         console.log(i, sorted)
-//         for (const j of sorted){
-//             if (i===j){
-//                 temp=''
-            
-//             }
+function filterRecettes(){
+    const words = document.getElementById('recherche').value.toLowerCase();
+    const recipes = document.querySelectorAll('.recette')
+    recipes.forEach(recipe => {
+        const name = recipe.querySelector('.nom_recette').innerHTML;
+        const description = recipe.querySelector('.text_recette').innerHTML;
+        const ingredients = Array.from(recipe.querySelectorAll('.ingredient')).map(ingredient => ingredient.textContent.toLowerCase()).join(' ');
+        if (!(
+            name.includes(words) ||
+            ingredients.includes(words)|| 
+            description.includes(words))){
+            recipe.style.display = 'none';
+        }
+        else {recipe.style.display ='block'}
+    })
+}
+
+document.getElementById('recherche').addEventListener('change',filterRecettes)
+
+// function filter(liste){
+//     const words = document.getElementById('recherche').value.toLowerCase();
+//     const recipes = document.querySelectorAll('.recette')
+//     console.log(recipes)
+//     console.log(words)
+//     recipes.forEach(recipe => {
+//         console.log(recipe)
+//         // const name = recipe.querySelector('nom_recette');
+//         const description = recipe.querySelector('text_recette');
+//         // const ingredients = Array.from(recipe.querySelector('ingredient')).map(ingredient => ingredient.textContent.toLowerCase()).join(' ');
+//         if (!(
+//             // name.includes(words) || 
+//             // ingredients.includes(words)|| 
+//             description.includes(words))){
+//             recipe.style.display = 'none';
 //         }
-//         sorted+=temp;
-//     }
-//     return sorted
+//         else {recipe.style.display ='block'}
+//     })
 // }
-// sortList(listAppareilsCreate())
-// sortList(listIngredientCreate())
-// sortList(listUstensilsCreate())
+
