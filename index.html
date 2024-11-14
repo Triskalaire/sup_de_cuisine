@@ -15,15 +15,13 @@
     <body>
 
         <header>
-            
-            <div class="image_intro">
-                <!-- <img id="image_presentation" src="images/Recette05.webp" alt="Image de présentation du Site">  -->
+            <div class="title">Sup de Cuisine</div>
+            <div class="image_intro" src="images/Recette09.jpg">
                 <div>
                     <span id="Accroche">Cherchez parmi plus de 1500 recettes du quotidien, simples et généreuses</span>
                 </div>
                 <div class="zone_de_recherche">
-                    <input id="recherche" type="text" value="Recherchez une recette ou un ingrédient">
-                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                    <input id="recherche" type="text" placeholder="Recherchez une recette ou un ingrédient">
                 </div>
             </div>
             
@@ -31,46 +29,26 @@
         </header>
 
         <main>
-            <div class="liste_container">
-                <div class="liste_ingredient">
-                    <select name="ingredients" id="select_ingredient">
-                        <option value="">Ingredients</option>
-                    </select>
-                </div>
-                <div class="liste_appareil">
-                    <select name="appareils" id="select_appareil">
-                        <option value="">Appareils</option>
-                    </select>
-                </div>
-                <div class="liste_ustensile">
-                    <select name="unstensiles" id="select_ingredient">
-                        <option value="">Ustensiles</option>
-                    </select>
-                </div>
+            <div id= "liste_container">
+                <select id="liste_ingredients">
+                    <option value =""> Ingrédient</option>
+                </select>
+                <select id="liste_appareils">
+                    <option value =""> Appareil</option>
+                </select>
+                <select id="liste_ustensiles">
+                    <option value =""> Ustensile</option>
+                </select>
             </div>
 
             <div class="full_container">
+                <div id="compteur"> 50 recettes </div>
                 <div id="liste_recettes" class="liste_recettes">
-                    <div class="recette_loader"> Chargement ...</div>
-                    <!-- <a class="recette" href="#">
-                        <div class="img_recette">
-                            <img class="food_image" src="images\Recette01.webp">
-                        </div>
-                        <div class="nom_recette">
-                            recette
-                        </div>
-                        <div class="text_recette">
-                            on fait comme ça la recette
-                        </div>
-                        <div class="ingredient_recette">
-                            il y a ça dans la recette
-                        </div>
-                    </a> -->
+                    <div id="recette_loader"> Chargement ...</div>
                 </div>
             </div>
         </main>
-        <script type="module" src="code.js">
-        </script>
+        <script type="module" src="code.js"></script>
+        <script type="module" src="filtering.js"></script>
     </body>
-
 </html>
