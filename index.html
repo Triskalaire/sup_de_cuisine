@@ -15,15 +15,13 @@
     <body>
 
         <header>
-            
+            <div class="title">Sup de Cuisine</div>
             <div class="image_intro">
-                <!-- <img id="image_presentation" src="images/Recette05.webp" alt="Image de présentation du Site">  -->
                 <div>
                     <span id="Accroche">Cherchez parmi plus de 1500 recettes du quotidien, simples et généreuses</span>
                 </div>
                 <div class="zone_de_recherche">
                     <input id="recherche" type="text" placeholder="Recherchez une recette ou un ingrédient">
-                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
                 </div>
             </div>
             
@@ -33,13 +31,13 @@
         <main>
             <div id= "liste_container">
                 <select id="liste_ingredients">
-
+                    <option value =""> choisissez un ingrédient</option>
                 </select>
                 <select id="liste_appareils">
-
+                    <option value =""> choisissez un appareil</option>
                 </select>
                 <select id="liste_ustensiles">
-
+                    <option value =""> choisissez un ustensile</option>
                 </select>
                 <div id="filters">
                     
@@ -47,13 +45,14 @@
             </div>
 
             <div class="full_container">
+                <div id="compteur"> 50 recettes </div>
                 <div id="liste_recettes" class="liste_recettes">
-                    <div class="recette_loader"> Chargement ...</div>
+                    <div id="recette_loader"> Chargement ...</div>
                 </div>
             </div>
         </main>
         <script type="module" src="code.js"></script>
-        <script src="filtering.js"></script>
+        <script type="module" src="filtering.js"></script>
     </body>
 
 </html>

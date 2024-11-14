@@ -15,7 +15,7 @@ body{
 
 header{
     position:relative;
-    background-image: url("images/Recette05.webp");
+    background-image: url("images/Recette05.jpg");
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,4 +62,86 @@ main{
         gap:15px;
         margin:5%;
     }
+}
+
+.liste_recettes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 20px;
+    justify-content: center;
+}
+
+.recette {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px; 
+    overflow: hidden;
+    padding: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_recette {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.img_recette img.food_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.nom_recette {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+}
+
+.servings, .time {
+    font-size: 0.9em;
+    color: #666;
+    margin: 4px 0;
+}
+
+.ingredients_recette {
+    font-size: 0.9em;
+    color: #333;
+    text-align: left;
+    margin-top: 12px;
+    padding-left: 0;
+}
+
+.ingredients_recette .ingredient_recette {
+    margin-bottom: 4px;
+}
+
+.text_recette {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 12px;
+    line-height: 1.4;
+}
+
+.appliance {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.ustensiles {
+    font-size: 0.9em;
+    color: #777;
+    text-align: left;
+    margin-top: 8px;
 }

@@ -1,9 +1,96 @@
-// document.getElementById(liste_ingredient).addEventListener('change',filter(liste_ingredient));
-// document.getElementById(liste_ustensiles).addEventListener('change',filter(liste_ustensiles));
-// document.getElementById(liste_appareil).addEventListener('change',filter(liste_appareil));
-document.getElementById('recherche').addEventListener('input',filterRecettes());
 
-function listIngredientCreate(){
+document.getElementById('recherche').addEventListener('change',filterRecettes);
+
+
+function filterRecettes(){
+    const words = document.getElementById('recherche').value.toLowerCase();
+    const recipes = document.querySelectorAll('.recette')
+    var comptage = 0;
+    recipes.forEach(recipe => {
+        const name = recipe.querySelector('.nom_recette').innerHTML;
+        const description = recipe.querySelector('.text_recette').innerHTML;
+        const ingredients = Array.from(recipe.querySelectorAll('.ingredient')).map(ingredient => ingredient.textContent.toLowerCase()).join(' ');
+        if (!(
+            name.includes(words) ||
+            ingredients.includes(words)|| 
+            description.includes(words))){
+            recipe.style.display = 'none';
+        }
+        else 
+        {
+            recipe.style.display ='block';
+            comptage = comptage + 1;
+        }
+    })
+    document.getElementById('compteur').innerHTML=`${comptage} recettes`
+
+}
+
+export function filter_liste_appareil(){
+    const words = document.getElementById('liste_appareils').value.toLowerCase();
+    const recipes = document.querySelectorAll('.recette')
+    var comptage = 0;
+
+    recipes.forEach(recipe => {
+        const  appareils =recipe.querySelector('.appliance').innerHTML.toLowerCase()
+        if (!(appareils.includes(words)))
+            {
+            recipe.style.display = 'none';
+        }
+        else {
+            recipe.style.display ='block';
+            comptage = comptage + 1;
+
+        }
+    })
+    document.getElementById('compteur').innerHTML=`${comptage} recettes`
+}
+
+export function filter_liste_ustensiles(){
+    const words = document.getElementById('liste_ustensiles').value.toLowerCase();
+    const recipes = document.querySelectorAll('.recette')
+    var comptage = 0;
+
+    recipes.forEach(recipe => {
+        const ustensile = Array.from(recipe.querySelector('.ustensiles'));
+        console.log(ustensile)
+        if (!(ustensile.includes(words))){
+            recipe.style.display = 'none';
+        }
+        else {
+            recipe.style.display ='block';
+            comptage = comptage + 1;
+
+        }
+    })
+    document.getElementById('compteur').innerHTML=`${comptage} recettes`
+}
+
+export function filter_liste_ingredient(){
+    const words = document.getElementById('liste_ingredients').value.toLowerCase();
+    const recipes = document.querySelectorAll('.recette')
+    var comptage = 0;
+
+    recipes.forEach(recipe => {
+        const name = recipe.querySelector('.nom_recette').innerHTML;
+        const description = recipe.querySelector('.text_recette').innerHTML;
+        const ingredients = Array.from(recipe.querySelectorAll('.ingredient')).map(ingredient => ingredient.textContent.toLowerCase()).join(' ');
+        if (!(
+            name.includes(words) ||
+            ingredients.includes(words)|| 
+            description.includes(words))){
+            recipe.style.display = 'none';
+        }
+        else {
+            recipe.style.display ='block';
+            comptage = comptage + 1;
+
+        }
+    })
+    document.getElementById('compteur').innerHTML=`${comptage} recettes`
+}
+
+export function listIngredientCreate(){
     const collection = document.getElementsByClassName('ingredient')
     const liste_ingredient = document.getElementById('liste_ingredients');
     
@@ -24,7 +111,7 @@ function listIngredientCreate(){
     return liste_ingredient;
 }
 
-function listUstensilsCreate(){
+export function listUstensilsCreate(){
     const collection = document.getElementsByClassName('ustensils')
     const liste_ustensiles = document.getElementById('liste_ustensiles');
     
@@ -45,7 +132,7 @@ function listUstensilsCreate(){
     return liste_ustensiles;
 }
 
-function listAppareilsCreate(){
+export function listAppareilsCreate(){
     const collection = document.getElementsByClassName('appliance')
     const liste_appareils = document.getElementById('liste_appareils');
     
@@ -67,42 +154,6 @@ function listAppareilsCreate(){
     return liste_appareils;
 }
 
-function filterRecettes(){
-    const words = document.getElementById('recherche').value.toLowerCase();
-    const recipes = document.querySelectorAll('.recette')
-    recipes.forEach(recipe => {
-        const name = recipe.querySelector('.nom_recette').innerHTML;
-        const description = recipe.querySelector('.text_recette').innerHTML;
-        const ingredients = Array.from(recipe.querySelectorAll('.ingredient')).map(ingredient => ingredient.textContent.toLowerCase()).join(' ');
-        if (!(
-            name.includes(words) ||
-            ingredients.includes(words)|| 
-            description.includes(words))){
-            recipe.style.display = 'none';
-        }
-        else {recipe.style.display ='block'}
-    })
-}
 
-document.getElementById('recherche').addEventListener('change',filterRecettes)
 
-// function filter(liste){
-//     const words = document.getElementById('recherche').value.toLowerCase();
-//     const recipes = document.querySelectorAll('.recette')
-//     console.log(recipes)
-//     console.log(words)
-//     recipes.forEach(recipe => {
-//         console.log(recipe)
-//         // const name = recipe.querySelector('nom_recette');
-//         const description = recipe.querySelector('text_recette');
-//         // const ingredients = Array.from(recipe.querySelector('ingredient')).map(ingredient => ingredient.textContent.toLowerCase()).join(' ');
-//         if (!(
-//             // name.includes(words) || 
-//             // ingredients.includes(words)|| 
-//             description.includes(words))){
-//             recipe.style.display = 'none';
-//         }
-//         else {recipe.style.display ='block'}
-//     })
-// }
 

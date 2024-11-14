@@ -4,7 +4,7 @@ function createRecetteSheet(){
     article.innerHTML=
         `
         <div class="img_recette">
-            <img class="food_image" src="${this.image}">
+            <img class="food_image" src="images/${this.image}">
         </div>
         <div class="nom_recette">
             ${this.name}
@@ -16,6 +16,7 @@ function createRecetteSheet(){
             ${this.time}
         </div>
         <div class="ingredients_recette">
+            Ingredients :
             ${createIngredientList(this.ingredients)}
         </div>
         <div class="text_recette">
@@ -73,3 +74,5 @@ export const createRecette = (recette) => {
         createUstensilsList: createUstensilsList,
     }
 };
+
+
