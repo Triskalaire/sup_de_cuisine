@@ -23,9 +23,11 @@ function createRecetteSheet(){
             ${this.description}
         </div>
         <div class="appliance">
+            Appareil utilisé :
             ${this.appliance}
         </div>
         <div class="ustensiles">
+            Ustensils nécéssaires :
             ${createUstensilsList(this.ustensils)}
         </div>
         `;
