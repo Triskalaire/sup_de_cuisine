@@ -39,9 +39,9 @@ export function filter_liste_appareil(){
         }
         else {
             recipe.style.display ='block';
-            comptage = comptage + 1;
-
         }
+        if (recipe.style.display==='block'){comptage = comptage + 1;}
+
     })
     document.getElementById('compteur').innerHTML=`${comptage} recettes`
 }
@@ -50,18 +50,24 @@ export function filter_liste_ustensiles(){
     const words = document.getElementById('liste_ustensiles').value.toLowerCase();
     const recipes = document.querySelectorAll('.recette')
     var comptage = 0;
-
+    var display='none'
     recipes.forEach(recipe => {
-        const ustensile = Array.from(recipe.querySelector('.ustensiles'));
-        console.log(ustensile)
-        if (!(ustensile.includes(words))){
-            recipe.style.display = 'none';
-        }
-        else {
-            recipe.style.display ='block';
+        display='none'
+        const ustensile = recipe.querySelectorAll('.ustensils');
+        ustensile.forEach( ustensil=>{
+            if (ustensil.innerHTML.toLowerCase().includes(words)){
+                display="block"
+            }
+            }
+        )
+        if (display==='block'){
             comptage = comptage + 1;
-
+            recipe.style.display="block";
         }
+        else{
+            recipe.style.display="none"
+        }
+        
     })
     document.getElementById('compteur').innerHTML=`${comptage} recettes`
 }
@@ -70,23 +76,26 @@ export function filter_liste_ingredient(){
     const words = document.getElementById('liste_ingredients').value.toLowerCase();
     const recipes = document.querySelectorAll('.recette')
     var comptage = 0;
+    var display = "none"
+
 
     recipes.forEach(recipe => {
-        const name = recipe.querySelector('.nom_recette').innerHTML;
-        const description = recipe.querySelector('.text_recette').innerHTML;
-        const ingredients = Array.from(recipe.querySelectorAll('.ingredient')).map(ingredient => ingredient.textContent.toLowerCase()).join(' ');
-        if (!(
-            name.includes(words) ||
-            ingredients.includes(words)|| 
-            description.includes(words))){
-            recipe.style.display = 'none';
-        }
-        else {
-            recipe.style.display ='block';
+        display='none';
+        const ingredients = recipe.querySelectorAll('.ingredient')
+        ingredients.forEach(ingredient =>{
+            if (ingredient.innerHTML.toLowerCase().includes(words)){
+                display="block"
+            }
+        })
+        if (display==="block"){
             comptage = comptage + 1;
-
+            recipe.style.display = 'block';
+        }
+        else{
+            recipe.style.display='none'
         }
     })
+        
     document.getElementById('compteur').innerHTML=`${comptage} recettes`
 }
 
